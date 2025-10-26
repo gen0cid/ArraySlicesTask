@@ -1,0 +1,67 @@
+ArraySlicesTask
+
+Набор небольших задач на Go, посвящённых работе с массивами и слайсами: палиндромы, удаление элементов, сжатие последовательностей, подсчёты и т.д. Каждая задача оформлена отдельной папкой с самостоятельной программой (обычно main.go).  ￼
+
+Содержание
+	•	APurePalindrome — проверка строки на палиндром (базовый вариант).  ￼
+	•	CheckIfTheSliceIsAPalindrome — проверка палиндрома для среза чисел.  ￼
+	•	CheckingThePalindromeForAString — ещё один вариант проверки палиндрома для строк.  ￼
+	•	CompressASliceByRemovingAdjacentDuplicates — «сжатие» слайса: удаление подряд идущих дубликатов.  ￼
+	•	CountingThePerimetrOfIsland — подсчёт периметра «острова» в матрице 0/1.  ￼
+	•	CountsTheLongestSeries — длина самой длинной серии одинаковых элементов.  ￼
+	•	FindThePivotIndexInASlice — поиск «опорного» индекса (сумма слева = сумме справа).  ￼
+	•	MoveAllTheZerosToTheEndOfTheSlicePreservingTheOrderOfTheRemainingElements — перенос всех нулей в конец, сохраняя порядок остальных.  ￼
+	•	OutputsTheMostFrequentElementInTheArray — нахождение наиболее частого элемента.  ￼
+	•	RemomeSingleElement — удаление одного элемента по индексу.  ￼
+	•	RemoveAllEvenNumbersFromTheSlice — удаление всех чётных чисел из слайса.  ￼
+	•	RemoveElementArray — удаление элемента(ов) из массива/слайса (вариант реализации).  ￼
+	•	RemoveSingleElementArray2 — второй вариант удаления одного элемента.  ￼
+	•	ReturnsTheOnlyMissingElementOfTheArray — поиск единственного отсутствующего элемента в диапазоне.  ￼
+
+
+Требования
+	•	Go 1.21+ (подойдёт и более новая версия).
+
+Как запускать
+
+Каждая задача — это отдельный мини-проект. Перейди в нужную папку и запусти:
+
+git clone https://github.com/gen0cid/ArraySlicesTask.git
+cd ArraySlicesTask
+
+# пример: запустить задачу по сжатию слайса
+cd CompressASliceByRemovingAdjacentDuplicates
+go run .
+
+Альтернативно, можно запускать напрямую из корня:
+
+go run ./CompressASliceByRemovingAdjacentDuplicates
+go run ./FindThePivotIndexInASlice
+# и т.д.
+
+Структура репозитория
+
+ArraySlicesTask/
+├── APurePalindrome/
+├── CheckIfTheSliceIsAPalindrome/
+├── CheckingThePalindromeForAString/
+├── CompressASliceByRemovingAdjacentDuplicates/
+├── CountingThePerimetrOfIsland/
+├── CountsTheLongestSeries/
+├── FindThePivotIndexInASlice/
+├── MoveAllTheZerosToTheEndOfTheSlicePreservingTheOrderOfTheRemainingElements/
+├── OutputsTheMostFrequentElementInTheArray/
+├── RemomeSingleElement/
+├── RemoveAllEvenNumbersFromTheSlice/
+├── RemoveElementArray/
+├── RemoveSingleElementArray2/
+└── ReturnsTheOnlyMissingElementOfTheArray/
+
+￼
+
+Полезные заметки
+	•	Для задач «удалить элемент из слайса» можно использовать приёмы со сшиванием частей:
+s = append(s[:i], s[i+1:]...) — удаляет i-й элемент.
+Для сохранения порядка при переносе нулей — двусканный подход или стабильная фильтрация по месту.
+	•	Для «периметра острова» удобно обходить клетки и прибавлять стороны, у которых сосед — вода/граница.
+	•	Для «наиболее частого элемента» — использовать map[T]int для подсчёта частот.
