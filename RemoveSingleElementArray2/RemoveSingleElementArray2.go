@@ -9,7 +9,7 @@ func main() {
 		if a[i] == a[i+1] {
 			c++
 		} else if i == len(a)-2 {
-			fmt.Println(a[len(a)-1])
+			fmt.Println(a[i+1])
 			break
 		} else if (a[i] != a[i+1]) && (c != 1) {
 			c = 1

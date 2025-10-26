@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	nums := [5]int{2, 2, 1, 1, 2}
+	nums := [9]int{3, 5, 3, 1, 5, 3, 1, 3, 3}
 	c := math.Ceil(float64(len(nums)) / float64(2))
 	sort.Ints(nums[:])
 	fmt.Println(nums)
